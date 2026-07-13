@@ -71,6 +71,41 @@ if (viewport && slides.length > 1) {
 
 const revealTargets = document.querySelectorAll("[data-reveal]");
 const navShells = Array.from(document.querySelectorAll(".nav-shell"));
+const siteHeader = document.querySelector(".site-header");
+const brandLogo = document.querySelector(".brand img[data-logo-color][data-logo-white]");
+
+if (siteHeader && brandLogo && !document.body.classList.contains("legal-body")) {
+  let headerLogoOnDark = null;
+  let pendingHeaderCheck = false;
+
+  const updateHeaderLogo = () => {
+    pendingHeaderCheck = false;
+
+    const headerBounds = siteHeader.getBoundingClientRect();
+    const sampleX = Math.min(Math.max(window.innerWidth * 0.5, 24), window.innerWidth - 24);
+    const sampleY = Math.min(headerBounds.bottom + 10, window.innerHeight - 8);
+    const sampleTarget = document.elementFromPoint(sampleX, sampleY);
+    const isDarkSection = Boolean(sampleTarget?.closest(".feature-band, .faq-band"));
+
+    if (isDarkSection === headerLogoOnDark) return;
+
+    headerLogoOnDark = isDarkSection;
+    brandLogo.src = isDarkSection
+      ? brandLogo.dataset.logoWhite || brandLogo.src
+      : brandLogo.dataset.logoColor || brandLogo.src;
+  };
+
+  const requestHeaderLogoUpdate = () => {
+    if (pendingHeaderCheck) return;
+    pendingHeaderCheck = true;
+    window.requestAnimationFrame(updateHeaderLogo);
+  };
+
+  window.addEventListener("scroll", requestHeaderLogoUpdate, { passive: true });
+  window.addEventListener("resize", requestHeaderLogoUpdate);
+  window.addEventListener("load", requestHeaderLogoUpdate);
+  requestHeaderLogoUpdate();
+}
 
 if ("IntersectionObserver" in window && revealTargets.length) {
   const observer = new IntersectionObserver(
