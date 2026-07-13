@@ -378,14 +378,19 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
   line-height: 0;
   transition: transform 180ms ease, filter 180ms ease;
 }
 
+.official-store-badge {
+  width: 16rem;
+}
+
 .official-store-badge img {
   display: block;
-  width: auto;
-  height: 3.5rem;
+  width: 100%;
+  height: auto;
   filter: drop-shadow(0 14px 22px rgba(17, 17, 17, 0.14));
 }
 
@@ -1175,8 +1180,13 @@ a {
     border-radius: 0.72rem;
   }
 
+  .official-store-badge {
+    width: 14.4rem;
+  }
+
   .official-store-badge img {
-    height: 3.15rem;
+    width: 100%;
+    height: auto;
   }
 
   .feature-frame {
