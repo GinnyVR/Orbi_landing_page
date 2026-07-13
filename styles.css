@@ -508,8 +508,8 @@ a {
 .principles::before {
   content: "";
   position: absolute;
-  left: -5.5rem;
-  bottom: 1.5rem;
+  left: 12rem;
+  top: 10.5rem;
   width: 20rem;
   height: 20rem;
   border-radius: 50%;
@@ -520,6 +520,26 @@ a {
     transparent 76%
   );
   filter: blur(74px);
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.principles::after {
+  content: "";
+  position: absolute;
+  left: -6.5rem;
+  top: 1.5rem;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(109, 129, 237, 0.34) 0%,
+    rgba(109, 129, 237, 0.17) 42%,
+    transparent 76%
+  );
+  filter: blur(72px);
   opacity: 1;
   pointer-events: none;
   z-index: 0;
@@ -1069,10 +1089,18 @@ a {
   }
 
   .principles::before {
-    left: -4rem;
-    bottom: 1rem;
+    left: 7.5rem;
+    top: 11rem;
     width: 16rem;
     height: 16rem;
+  }
+
+  .principles::after {
+    left: -4.5rem;
+    top: 1rem;
+    width: 14rem;
+    height: 14rem;
+    filter: blur(62px);
   }
 
   .feature-carousel {
@@ -1153,12 +1181,21 @@ a {
   }
 
   .principles::before {
-    left: -2.5rem;
-    bottom: 0.5rem;
+    left: 1.25rem;
+    top: 13rem;
     width: 12rem;
     height: 12rem;
     filter: blur(54px);
     opacity: 0.9;
+  }
+
+  .principles::after {
+    left: -3rem;
+    top: 1.25rem;
+    width: 10.5rem;
+    height: 10.5rem;
+    filter: blur(48px);
+    opacity: 0.92;
   }
 
   .hero-marquee {
