@@ -11,9 +11,9 @@ Why this lives outside `orbi_nhost`:
 Files:
 
 - `index.html`: main landing page
-- `terms.html`: Terms of Service
-- `privacy.html`: Privacy Policy
-- `support.html`: Support page
+- `terms/index.html`: Terms of Service
+- `privacy/index.html`: Privacy Policy
+- `support/index.html`: Support page
 - `styles.css`: shared styling
 - `script.js`: carousel, smooth scrolling, reveal animations
 - `robots.txt`: crawler rules
