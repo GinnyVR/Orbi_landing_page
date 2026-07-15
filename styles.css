@@ -736,7 +736,8 @@ a {
 .birthday-feature .feature-slide-shell,
 .tags-feature .feature-slide-shell,
 .backup-feature .feature-slide-shell,
-.friends-feature .feature-slide-shell {
+.friends-feature .feature-slide-shell,
+.messaging-feature .feature-slide-shell {
   align-content: center;
 }
 
@@ -801,7 +802,8 @@ a {
 .birthday-visual,
 .tags-visual,
 .backup-visual,
-.friends-visual {
+.friends-visual,
+.messaging-visual {
   --stack-scale: 0.82;
   position: relative;
   width: calc(29.5rem * var(--stack-scale));
@@ -813,7 +815,8 @@ a {
 .birthday-stage,
 .tags-stage,
 .backup-stage,
-.friends-stage {
+.friends-stage,
+.messaging-stage {
   position: relative;
   width: calc(29.5rem * var(--stack-scale));
   height: calc(34rem * var(--stack-scale));
@@ -935,6 +938,39 @@ a {
 
 .friends-onboarding-shot img,
 .friends-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.messaging-info-shot,
+.messaging-thread-shot {
+  position: absolute;
+  margin: 0;
+  overflow: hidden;
+  box-shadow: 0 28px 54px rgba(15, 22, 56, 0.32);
+}
+
+.messaging-info-shot {
+  left: calc(0.45rem * var(--stack-scale));
+  top: calc(0.45rem * var(--stack-scale));
+  width: calc(13.85rem * var(--stack-scale));
+  border-radius: calc(2.15rem * var(--stack-scale));
+  transform: rotate(-8deg);
+  z-index: 1;
+}
+
+.messaging-thread-shot {
+  left: calc(11.8rem * var(--stack-scale));
+  top: calc(3.85rem * var(--stack-scale));
+  width: calc(13.85rem * var(--stack-scale));
+  border-radius: calc(2.15rem * var(--stack-scale));
+  transform: rotate(6deg);
+  z-index: 2;
+}
+
+.messaging-info-shot img,
+.messaging-thread-shot img {
   display: block;
   width: 100%;
   height: auto;
@@ -1173,6 +1209,26 @@ a {
 .friends-chip-bottom {
   left: calc(16.7rem * var(--stack-scale));
   top: calc(24.2rem * var(--stack-scale));
+}
+
+.messaging-chip {
+  max-width: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #24387b;
+  font-size: 0.86rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 14px 32px rgba(26, 36, 84, 0.2);
+}
+
+.messaging-chip-top {
+  left: calc(16.6rem * var(--stack-scale));
+  top: calc(0.75rem * var(--stack-scale));
+}
+
+.messaging-chip-bottom {
+  left: calc(1.15rem * var(--stack-scale));
+  top: calc(21.25rem * var(--stack-scale));
 }
 
 .carousel-dots {
@@ -1544,7 +1600,8 @@ a {
   .birthday-feature .feature-slide-shell,
   .tags-feature .feature-slide-shell,
   .backup-feature .feature-slide-shell,
-  .friends-feature .feature-slide-shell {
+  .friends-feature .feature-slide-shell,
+  .messaging-feature .feature-slide-shell {
     justify-content: center;
   }
 
@@ -1552,7 +1609,8 @@ a {
   .birthday-visual,
   .tags-visual,
   .backup-visual,
-  .friends-visual {
+  .friends-visual,
+  .messaging-visual {
     --stack-scale: 0.74;
     width: min(100%, calc(29.5rem * var(--stack-scale)));
     min-height: calc(34rem * var(--stack-scale));
@@ -1695,7 +1753,8 @@ a {
   .birthday-visual,
   .tags-visual,
   .backup-visual,
-  .friends-visual {
+  .friends-visual,
+  .messaging-visual {
     --stack-scale: 0.68;
     width: min(100%, calc(29.5rem * var(--stack-scale)));
     min-height: calc(34rem * var(--stack-scale));
@@ -1733,7 +1792,8 @@ a {
   .birthday-visual,
   .tags-visual,
   .backup-visual,
-  .friends-visual {
+  .friends-visual,
+  .messaging-visual {
     --stack-scale: 0.54;
     width: min(100%, calc(29.5rem * var(--stack-scale)));
     min-height: calc(34rem * var(--stack-scale));
@@ -1746,7 +1806,8 @@ a {
   .birthday-visual,
   .tags-visual,
   .backup-visual,
-  .friends-visual {
+  .friends-visual,
+  .messaging-visual {
     --stack-scale: 0.45;
   }
 }
