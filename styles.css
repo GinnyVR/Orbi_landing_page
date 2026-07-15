@@ -737,7 +737,8 @@ a {
 .tags-feature .feature-slide-shell,
 .backup-feature .feature-slide-shell,
 .friends-feature .feature-slide-shell,
-.messaging-feature .feature-slide-shell {
+.messaging-feature .feature-slide-shell,
+.appearance-feature .feature-slide-shell {
   align-content: center;
 }
 
@@ -763,8 +764,25 @@ a {
 }
 
 .feature-callout {
+  display: grid;
+  gap: 0.35rem;
   padding-left: 1.1rem;
   border-left: 2px solid rgba(255, 255, 255, 0.28);
+}
+
+.feature-callout + .feature-callout {
+  margin-top: 1rem;
+}
+
+.feature-callout strong {
+  color: #fff;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+}
+
+.feature-callout span {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  line-height: 1.55;
 }
 
 .feature-points {
@@ -803,7 +821,8 @@ a {
 .tags-visual,
 .backup-visual,
 .friends-visual,
-.messaging-visual {
+.messaging-visual,
+.appearance-visual {
   --stack-scale: 0.82;
   position: relative;
   width: calc(29.5rem * var(--stack-scale));
@@ -816,7 +835,8 @@ a {
 .tags-stage,
 .backup-stage,
 .friends-stage,
-.messaging-stage {
+.messaging-stage,
+.appearance-stage {
   position: relative;
   width: calc(29.5rem * var(--stack-scale));
   height: calc(34rem * var(--stack-scale));
@@ -976,6 +996,39 @@ a {
   height: auto;
 }
 
+.appearance-dark-shot,
+.appearance-light-shot {
+  position: absolute;
+  margin: 0;
+  overflow: hidden;
+  box-shadow: 0 28px 54px rgba(15, 22, 56, 0.32);
+}
+
+.appearance-dark-shot {
+  left: calc(0.45rem * var(--stack-scale));
+  top: calc(0.45rem * var(--stack-scale));
+  width: calc(13.85rem * var(--stack-scale));
+  border-radius: calc(2.15rem * var(--stack-scale));
+  transform: rotate(-8deg);
+  z-index: 1;
+}
+
+.appearance-light-shot {
+  left: calc(11.8rem * var(--stack-scale));
+  top: calc(3.85rem * var(--stack-scale));
+  width: calc(13.85rem * var(--stack-scale));
+  border-radius: calc(2.15rem * var(--stack-scale));
+  transform: rotate(6deg);
+  z-index: 2;
+}
+
+.appearance-dark-shot img,
+.appearance-light-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .tilted-phone,
 .feature-phone {
   position: absolute;
@@ -1095,11 +1148,11 @@ a {
 
 .top-chip {
   left: calc(20.2rem * var(--stack-scale));
-  top: calc(0.75rem * var(--stack-scale));
+  top: calc(1.4rem * var(--stack-scale));
 }
 
 .glance-chip {
-  left: calc(16.6rem * var(--stack-scale));
+  left: calc(15.6rem * var(--stack-scale));
   min-width: calc(11.4rem * var(--stack-scale));
   text-align: center;
   white-space: nowrap;
@@ -1222,13 +1275,50 @@ a {
 }
 
 .messaging-chip-top {
+  left: calc(15.6rem * var(--stack-scale));
+  top: calc(1.4rem * var(--stack-scale));
+  min-width: calc(12.8rem * var(--stack-scale));
+  text-align: center;
+  white-space: nowrap;
+}
+
+.messaging-chip-bottom {
+  left: calc(-1.25rem * var(--stack-scale));
+  top: calc(24.15rem * var(--stack-scale));
+  min-width: calc(11.7rem * var(--stack-scale));
+  text-align: center;
+  white-space: nowrap;
+}
+
+.appearance-chip {
+  max-width: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #24387b;
+  font-size: 0.86rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 14px 32px rgba(26, 36, 84, 0.2);
+}
+
+.appearance-chip-top {
   left: calc(16.6rem * var(--stack-scale));
   top: calc(0.75rem * var(--stack-scale));
 }
 
-.messaging-chip-bottom {
+.appearance-chip-bottom {
   left: calc(1.15rem * var(--stack-scale));
   top: calc(21.25rem * var(--stack-scale));
+}
+
+.screenshot-feature .floating-card {
+  max-width: none;
+  padding:
+    clamp(0.45rem, calc(0.68rem * var(--stack-scale)), 0.68rem)
+    clamp(0.65rem, calc(0.9rem * var(--stack-scale)), 0.9rem);
+  font-size: clamp(0.6875rem, calc(0.98rem * var(--stack-scale)), 0.98rem);
+  line-height: 1.1;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .carousel-dots {
@@ -1601,7 +1691,8 @@ a {
   .tags-feature .feature-slide-shell,
   .backup-feature .feature-slide-shell,
   .friends-feature .feature-slide-shell,
-  .messaging-feature .feature-slide-shell {
+  .messaging-feature .feature-slide-shell,
+  .appearance-feature .feature-slide-shell {
     justify-content: center;
   }
 
@@ -1610,7 +1701,8 @@ a {
   .tags-visual,
   .backup-visual,
   .friends-visual,
-  .messaging-visual {
+  .messaging-visual,
+  .appearance-visual {
     --stack-scale: 0.74;
     width: min(100%, calc(29.5rem * var(--stack-scale)));
     min-height: calc(34rem * var(--stack-scale));
@@ -1754,7 +1846,8 @@ a {
   .tags-visual,
   .backup-visual,
   .friends-visual,
-  .messaging-visual {
+  .messaging-visual,
+  .appearance-visual {
     --stack-scale: 0.68;
     width: min(100%, calc(29.5rem * var(--stack-scale)));
     min-height: calc(34rem * var(--stack-scale));
@@ -1793,7 +1886,8 @@ a {
   .tags-visual,
   .backup-visual,
   .friends-visual,
-  .messaging-visual {
+  .messaging-visual,
+  .appearance-visual {
     --stack-scale: 0.54;
     width: min(100%, calc(29.5rem * var(--stack-scale)));
     min-height: calc(34rem * var(--stack-scale));
@@ -1807,7 +1901,8 @@ a {
   .tags-visual,
   .backup-visual,
   .friends-visual,
-  .messaging-visual {
+  .messaging-visual,
+  .appearance-visual {
     --stack-scale: 0.45;
   }
 }
