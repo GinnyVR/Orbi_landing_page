@@ -73,6 +73,7 @@ const revealTargets = document.querySelectorAll("[data-reveal]");
 const navShells = Array.from(document.querySelectorAll(".nav-shell"));
 const siteHeader = document.querySelector(".site-header");
 const brandLogo = document.querySelector(".brand img[data-logo-color][data-logo-white]");
+const darkLogoSections = Array.from(document.querySelectorAll(".feature-band, .faq-band"));
 
 if (siteHeader && brandLogo && !document.body.classList.contains("legal-body")) {
   let headerLogoOnDark = null;
@@ -82,10 +83,11 @@ if (siteHeader && brandLogo && !document.body.classList.contains("legal-body")) 
     pendingHeaderCheck = false;
 
     const headerBounds = siteHeader.getBoundingClientRect();
-    const sampleX = Math.min(Math.max(window.innerWidth * 0.5, 24), window.innerWidth - 24);
-    const sampleY = Math.min(headerBounds.bottom + 10, window.innerHeight - 8);
-    const sampleTarget = document.elementFromPoint(sampleX, sampleY);
-    const isDarkSection = Boolean(sampleTarget?.closest(".feature-band, .faq-band"));
+    const probeY = Math.min(headerBounds.bottom + 10, window.innerHeight - 8);
+    const isDarkSection = darkLogoSections.some((section) => {
+      const bounds = section.getBoundingClientRect();
+      return bounds.top <= probeY && bounds.bottom >= probeY;
+    });
 
     if (isDarkSection === headerLogoOnDark) return;
 
