@@ -483,15 +483,10 @@ a {
   border-radius: 1.85rem;
 }
 
-.principles,
 .feature-band,
 .faq-band,
 .contact-band {
   content-visibility: auto;
-}
-
-.principles {
-  contain-intrinsic-size: 760px;
 }
 
 .feature-band {
