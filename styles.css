@@ -452,7 +452,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: var(--marquee-gap);
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
   will-change: transform;
 }
 
@@ -1601,19 +1601,19 @@ a {
 
 @keyframes marquee-up {
   from {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translateY(calc(-50% - (var(--marquee-gap) / 2)));
+    transform: translate3d(0, calc(-50% - (var(--marquee-gap) / 2)), 0);
   }
 }
 
 @keyframes marquee-down {
   from {
-    transform: translateY(calc(-50% - (var(--marquee-gap) / 2)));
+    transform: translate3d(0, calc(-50% - (var(--marquee-gap) / 2)), 0);
   }
   to {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
