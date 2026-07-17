@@ -451,7 +451,7 @@ a {
 .marquee-track {
   display: flex;
   flex-direction: column;
-  gap: var(--marquee-gap);
+  gap: 0;
   transform: translate3d(0, 0, 0);
   will-change: transform;
 }
@@ -467,6 +467,8 @@ a {
 .marquee-set {
   display: grid;
   gap: var(--marquee-gap);
+  flex: 0 0 auto;
+  margin-bottom: var(--marquee-gap);
 }
 
 .marquee-shot {
@@ -480,6 +482,8 @@ a {
 
 .marquee-shot img {
   width: 100%;
+  aspect-ratio: 1242 / 2688;
+  object-fit: cover;
   border-radius: 1.85rem;
 }
 
@@ -1604,13 +1608,13 @@ a {
     transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translate3d(0, calc(-50% - (var(--marquee-gap) / 2)), 0);
+    transform: translate3d(0, -50%, 0);
   }
 }
 
 @keyframes marquee-down {
   from {
-    transform: translate3d(0, calc(-50% - (var(--marquee-gap) / 2)), 0);
+    transform: translate3d(0, -50%, 0);
   }
   to {
     transform: translate3d(0, 0, 0);
@@ -1826,6 +1830,32 @@ a {
   .hero-marquee {
     --marquee-gap: 0.75rem;
     width: min(100%, 21rem);
+  }
+
+  .marquee-column {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .marquee-column::before,
+  .marquee-column::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    height: 3.75rem;
+    pointer-events: none;
+  }
+
+  .marquee-column::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(245, 239, 235, 0.96), transparent);
+  }
+
+  .marquee-column::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(245, 239, 235, 0.96), transparent);
   }
 
   .glow {
